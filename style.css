@@ -79,6 +79,13 @@ section.slide { margin: 0; }
   gap: 50px;
 }
 
+.dotnav a.active {
+  transform: scale(1.6);
+  opacity: 1;
+  background: #fff;
+}
+
+
 .dotnav a{
   width: var(--dot-size);
   height: var(--dot-size);
