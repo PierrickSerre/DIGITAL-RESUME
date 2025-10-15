@@ -11,15 +11,14 @@
 </head>
 
 
-
 <body>
 
 <nav class="dotnav" aria-label="Navigation">
   <a href="#accueil"    aria-label="Accueil"></a>
   <a href="#xp-pro"     aria-label="Expérience"></a>
   <a href="#formation"  aria-label="Formation"></a>
-  <a href="#outils"     aria-label="Outils"></a>
-  <a href="#langues"    aria-label="Langues"></a>
+  <a href="#langues"     aria-label="Langues"></a>
+  <a href="#outils"    aria-label="Outils"></a>
   <a href="#contact"    aria-label="Contact"></a>
 </nav>
 
@@ -208,7 +207,29 @@
     </section>
 
 
+<script>
+  const sections = document.querySelectorAll("section.slide");
+  const dots = document.querySelectorAll(".dotnav a");
 
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Retire l'état actif de tous les points
+          dots.forEach((dot) => dot.classList.remove("active"));
+          // Active le point correspondant à la section visible
+          const activeDot = document.querySelector(
+            `.dotnav a[href="#${entry.target.id}"]`
+          );
+          if (activeDot) activeDot.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.5 } // 0.5 = section visible à 50 % minimum
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>
 
 </body>
 
