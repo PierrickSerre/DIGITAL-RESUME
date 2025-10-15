@@ -131,6 +131,12 @@ nav a {
 
 }
 
+.presentation {
+  display: flex;
+  padding-left: 25vh;
+  padding-right: 25vh;
+}
+
 
 
 .box {
@@ -252,7 +258,7 @@ nav a {
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
-  gap: 40px 200px;
+  gap: 40px 160px;
   padding: 0;   
 }
 
