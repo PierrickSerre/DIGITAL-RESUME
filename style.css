@@ -135,6 +135,8 @@ nav a {
   display: flex;
   padding-left: 25vh;
   padding-right: 25vh;
+  text-shadow: 0 3px 10px rgba(0,0,0,1);
+  text-shadow: 0 5px 5px rgba(0,0,0,1);
 }
 
 
